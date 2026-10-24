@@ -66,6 +66,12 @@ python3 <this skill's base directory>/scripts/skill_audit.py <skill_dir>     # o
 ```
 Flags: bad name / folder mismatch, description too long or without a trigger clause, name collisions, **orphan files** never mentioned in SKILL.md, **dangling paths**, oversized body, ALL-CAPS overuse, steps that produce nothing. Prints a 0–100 health score (−15 per ✗, −5 per warning). Fix every ✗. To benchmark public repos (report + chart + data), run `scripts/skill_report.py owner/repo …`.
 
+## Runtime prerequisite
+
+Pinned upstream reference: [jack-reson8/skill-skill at 0889698c67805fe293293f07ef0ec1e9e725fd24](https://github.com/jack-reson8/skill-skill/tree/0889698c67805fe293293f07ef0ec1e9e725fd24).
+
+This catalog entry bundles documentation and `LICENSE` only; `scripts/skill_audit.py` and `scripts/skill_report.py` are not bundled. Perform the static structure checks directly using read-only file inspection, or obtain user consent before fetching and inspecting the scripts at the pinned commit above.
+
 ## 5 · Effect test (minutes, not a benchmark)
 
 1. Write 2–3 prompts a real user would type (with context, typos, mixed language).
@@ -78,7 +84,12 @@ Flags: bad name / folder mismatch, description too long or without a trigger cla
 - After an edit, rerun the audit; show the user the diff summary, not the whole file.
 - Prune what never fires in effect tests. Rename only with the collision check; update every path in SKILL.md.
 
+## Examples
+
+- **Distil a workflow into a skill:** "Turn our 10-round UI review loop into a reusable skill." Extract the rejected/accepted patterns, convert each rule into a required step artifact or gate, write `SKILL.md` under 500 lines, and verify that every referenced support path exists.
+- **Audit an existing skill:** "Why does my skill never change the output?" Check the frontmatter trigger clause, scan for orphan references or dangling paths, and replace passive prose advice with explicit step artifacts and gates.
+
 ## Limitations
 
-- The audit is static and checks structure, not whether the instructions are correct
-- The effect test is a quick with/without comparison, not a benchmark
+- The audit is static and checks structure, not whether the instructions are correct.
+- The effect test is a quick with/without comparison, not a benchmark.
