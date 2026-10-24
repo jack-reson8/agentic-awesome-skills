@@ -27,11 +27,13 @@ It was distilled from a real project that went through ~10 rounds: early cuts we
 
 ## 0 · Setup (once per project folder)
 
-```bash
-bash ~/.claude/skills/pro-motion/scripts/setup.sh .   # copies the template + tools, installs puppeteer & ffmpeg-static, checks python deps
-FF=tools/node_modules/ffmpeg-static/ffmpeg
-```
 Needs Node 18+, Python 3 with numpy / scipy / matplotlib, and a Chrome / Chromium install (auto-detected; set `CHROME=/path` to override). Subject cutouts need macOS 14+.
+
+## Runtime prerequisite
+
+Pinned upstream reference: [jack-reson8/pro-motion at 50db3957004a086c24575897c0b97a2a975624a1](https://github.com/jack-reson8/pro-motion/tree/50db3957004a086c24575897c0b97a2a975624a1).
+
+This catalog entry bundles documentation, `assets/template/audio-plan.md`, `references/*.md`, and `LICENSE` only; the runtime template (`film.html`, `film.js`, `motion-lib.js`, OFL font binaries) and `scripts/` helpers (`setup.sh`, `analyze_music.py`, `audio_post.py`, `render-fast.js`, `contact_sheet.sh`, `ref_frames.sh`, `cutout.swift`, `faces.swift`) are not bundled. Before executing any rendering or setup step, obtain user consent to fetch the pinned upstream commit above, inspect all scripts and dependencies, and verify their contents.
 
 ## 1 · Brief intake (decide, don't interrogate)
 
@@ -104,13 +106,15 @@ Take feedback as "time → problem", fix only that, re-render (seconds, not minu
 
 ## Files
 
-- `scripts/` — `setup.sh`, `analyze_music.py`, `audio_post.py`, `render-fast.js`, `contact_sheet.sh`, `ref_frames.sh`, `cutout.swift`, `faces.swift`
-- `assets/template/` — `audio-plan.md`, `film.html`, `film.js` (8-second runnable demo), `motion-lib.js`, OFL handwriting fonts
+- `assets/template/` — `audio-plan.md`, `assets/fonts/LICENSES.md` (runtime HTML/JS/fonts at the pinned upstream commit)
 - `references/` — `audio-first.md`, `campaign-cases.md`, `sourcing.md`, `research-notes.md`, `aesthetic-checklist.md`, `lessons.md`
+
+## Examples
+
+- **Audio-first launch film:** "Plan a 20-second 9:16 launch film for our creative iOS app." Complete `audio-plan.md` first (campaign mechanism, energy map, and prompt), analyze the locked track's beat grid, propose 3 distinct style frames from multi-region references, and write `shotmap.md` before coding any scene.
+- **Music-synced revision:** "The cut at 4.2s feels like a generic slide transition." Check `references/aesthetic-checklist.md` and `references/lessons.md`, replace the static swap with a protagonist-driven morph synced to the mapped beat event, and verify via a contact sheet.
 
 ## Limitations
 
-- Rendering needs local Node, Chrome and ffmpeg
--  subject cutouts need macOS 14+
-- Generated music comes from external tools the user runs themselves
--  the skill only writes the plans and prompts
+- Rendering requires a separately reviewed copy of the upstream runtime plus local Node, Chrome, and ffmpeg; subject cutouts need macOS 14+.
+- Generated music comes from external tools the user runs themselves; the skill writes the audio plans, prompts, and shot maps.
