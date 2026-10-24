@@ -41,6 +41,12 @@ Required rows: a cover with a series lockup and an honest proof line; at least o
 ## 4 · Copy
 Write fluent, complete sentences with normal punctuation first: conclusion first, one logic line per paragraph, read it aloud. Then at most one light joke in the whole set and at most one 金句 (a concrete image that grows out of this story), only if one fits; stacked jokes read as greasy. `references/humor.md` is optional. No emoji, no slogans, no "not X but Y". Re-check every claim against brief.md. Read `references/lessons.md` now.
 
+## Runtime prerequisite
+
+Pinned upstream reference: [jack-reson8/post-skill at 7c360b790c009e21fea4b67621b4ee3487957a36](https://github.com/jack-reson8/post-skill/tree/7c360b790c009e21fea4b67621b4ee3487957a36).
+
+This catalog entry bundles documentation, `assets/example/day1-contact-sheet.jpg`, `references/*.md`, and `LICENSE` only; the HTML templates (`assets/ui.html`, `assets/figs.html`, `assets/poster.html`) and `scripts/` helpers (`shoot.sh`, `render.sh`, `contact.py`) are not bundled. Before executing browser screenshot or rendering helpers, obtain user consent to fetch the pinned upstream commit above and inspect the HTML/script files.
+
 ## 5 · Build
 - Real screenshots: `scripts/shoot.sh <url> screens/raw/name.png` (set `PROXY=` if needed).
 - UI mocks: copy `assets/ui.html` (390pt iPhone frames, zoomed to 1080×1440: `xl` X light, `xd` X dark with media, `ls` lock screen, `gg` Google no results, `sp` Stripe today, `cc` Claude chat). Before adding a new app, open its real UI or App Store screenshots and match status bar, type, spacing, icons.
@@ -56,8 +62,12 @@ Show the contact sheet and the post text (2–3 title options). Publishing is th
 
 Example output: `assets/example/day1-contact-sheet.jpg` (Day 1 of a building-in-public series).
 
+## Examples
+
+- **Xiaohongshu build-in-public carousel:** "Create a 7-frame Day 1 carousel from our launch metrics." Write `post/brief.md` with verified numbers, record 3 cover/App Store takeaways in `post/refs.md`, build the frame-by-frame table in `post/storyboard.md`, and draft fluent copy without fabricated claims.
+- **X launch visuals:** "Prepare a 3-image X post showing our new feature and real performance numbers." Pair real app screenshots with a single full-bleed metric frame and present 2–3 title options for user approval before publishing.
+
 ## Limitations
 
-- Images are built from the user's real screenshots and assets
--  it does not invent product claims
-- Publishing is left to the user
+- Images are built from the user's real screenshots and assets; it does not invent product claims.
+- Rendering HTML templates to PNG requires a separately reviewed copy of the upstream templates and headless Chrome; publishing is always left to the user.
