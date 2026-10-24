@@ -89,7 +89,7 @@ license_source: "https://github.com/jack-reson8/renhua/blob/main/LICENSE"
 - **X**：更短。一条只说一件事，可以只有半句。
 - **评论回复**：一两句，直接，像聊天。
 
-## 示例
+## Examples
 
 **AI 味（不要）：**
 > 今天最大的感受：做东西已经不难了，难的是让人知道它存在。
@@ -112,6 +112,5 @@ license_source: "https://github.com/jack-reson8/renhua/blob/main/LICENSE"
 
 ## Limitations
 
-- The voice rules describe one author's style
--  other authors need their own examples
-- Output is a draft for the user to review and publish themselves
+- The voice rules describe one author's style; other authors need their own examples.
+- Output is a draft for the user to review and publish themselves.
