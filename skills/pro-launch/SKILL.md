@@ -81,10 +81,16 @@ license_source: "https://github.com/jack-reson8/pro-launch/blob/main/LICENSE"
 - `domain_check.py` 域名（RDAP）+ 各区 App Store 同名检索。
 - `cutout_vector.sh` 生成图 → Vision 抠图（缩边）→ vtracer 矢量化 → svgo；`--mono` 走 potrace。依赖同目录的 `scripts/cut.swift`、`scripts/vectorize.js`。
 
+## Runtime prerequisite
+
+Pinned upstream reference: [jack-reson8/pro-launch at 3422b3f89fffb1b6917610f1dc5a3c6e576d8705](https://github.com/jack-reson8/pro-launch/tree/3422b3f89fffb1b6917610f1dc5a3c6e576d8705).
+
+This catalog entry bundles documentation, templates, and `LICENSE` only; the `scripts/` helpers (`phase_gate.py`, `appstore_refs.py`, `ref_archive.py`, `domain_check.py`, `cutout_vector.sh`, `cut.swift`, `vectorize.js`) are not bundled. Perform phase-gate checks directly against the required artifact files, or obtain user consent before fetching and inspecting the upstream scripts at the pinned commit above.
+
 ## 模板与例子
 - `assets/templates.md`：风格预览 brief、"哪里不如它"对比表、需求卡、交接块。
-- `examples/ui-iteration.md`：一个 UI 从被骂到被接受的完整循环（泛化）。
-- `examples/brand-launch.md`：起名→域名→账号矩阵→首周内容的完整例子（泛化）。
+- `references/example-ui-iteration.md`：一个 UI 从被骂到被接受的完整循环（泛化）。
+- `references/example-brand-launch.md`：起名→域名→账号矩阵→首周内容的完整例子（泛化）。
 
 ## 配套 skill（到点就调用，不要自己重造）
 | 阶段 | skill | 何时用 |
@@ -98,8 +104,12 @@ license_source: "https://github.com/jack-reson8/pro-launch/blob/main/LICENSE"
 
 **待吸收**（pro-launch 稳定后，反过来读这些 skill 的经验并并入对应阶段细则）：pro-motion 的联系表与音频先行流程 → 09；post 的网感与系列化 → 10；apple-design 的审查清单 → 06；renhua 的口吻规则 → D14。吸收时只摘可检查的规则，别整段搬。
 
+## Examples
+
+- **0-to-1 product positioning and naming:** "Help me position and name a photo-effect iOS app for Gen-Z." Produce `docs/positioning.md` with sourced category comparisons, then generate candidate names with a transparent rubric in `docs/naming.md` and `docs/trademark.md`, leaving domain purchase and registration to the user.
+- **Taste-first UI iteration:** "My app home screen looks like a generic web template." Collect ≥8 non-generic visual references in `refs/style-refs/INDEX.md`, propose 2–3 style previews before writing UI code, and evaluate each iteration with a side-by-side gap table in `docs/ui-log.md`.
+
 ## Limitations
 
-- It guides process and produces artifacts
--  it does not register trademarks, publish, or pay for anything on the user's behalf
-- Domain, trademark and store checks are research aids and not legal advice
+- It guides process and produces artifacts; it does not register trademarks, publish, or pay for anything on the user's behalf.
+- Domain, trademark and store checks are research aids and not legal advice.
